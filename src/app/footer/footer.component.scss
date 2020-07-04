@@ -1,0 +1,52 @@
+h6{
+    font-weight: bold;
+}
+li {
+    list-style: none;
+    line-height: 3;
+    color: rgb(255, 255, 255) !important;
+}
+.jcontent {
+    // background-color: black; 
+    background-color: rgba(128, 128, 128, 0.774);
+    // color: rgba(0, 0, 0, 0.466);
+    // color: white;
+    display: flex;
+    // margin: 32px auto;
+    // padding: 0 16px;
+    // padding-bottom: 0px;
+    margin-bottom: 0px;
+
+    flex-direction: column;
+    align-items: center;
+}
+.jcard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.jcard {
+    // background-color: rgba(128, 128, 128, 0.37);
+
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+}
+
+.jcard-container .jcard:not(:last-child) {
+    margin-right: 0;
+}
+
+.jcard-container .jcard:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    // box-shadow: 0 4px 0px rgba(black, 0.35);
+    box-shadow: 0 4px 0px rgba(rgb(255, 0, 0), 0.35);
+
+}
