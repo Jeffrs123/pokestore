@@ -16,6 +16,15 @@
   h6 {
     margin: 8px 0;
   }
+  table, th, td {
+    text-align: center;
+    border: 1px outset black;
+    padding: 10px;
+  }
+
+  // table {
+  //   border-spacing: 15px;
+  // }
 
   p {
     margin: 0;
@@ -273,6 +282,8 @@
     .jcard.highlight-card span {
       margin-left: 72px;
     }
+
+    
 
     // svg#rocket-smoke {
     //   right: 120px;
