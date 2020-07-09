@@ -5,19 +5,19 @@
   <div *ngIf="!isCarrinho">
     <div *ngIf="pageContents$ | async as contents; else loadingError">
       <!-- <pre> {{contents | json }}</pre> -->
-        <div *ngFor="let content of contents.results" [@flyInOutY]>
-          <div [ngSwitch]="path" [@flyInOutY]>
-            <app-catalog      *ngSwitchCase="'pokestore'" [content]="content"></app-catalog>
-            <!-- <app-resume-shop  *ngSwitchCase="'carrinho'"></app-resume-shop> -->
-            <!-- <app-resume-shop  *ngSwitchCase="'carrinho'" [content]="content"></app-resume-shop> -->
-          </div>
+      <div *ngFor="let content of contents.results" [@flyInOutY]>
+        <div [ngSwitch]="path" [@flyInOutY]>
+          <app-catalog *ngSwitchCase="'pokestore'" [content]="content"></app-catalog>
+          <!-- <app-resume-shop  *ngSwitchCase="'carrinho'"></app-resume-shop> -->
+          <!-- <app-resume-shop  *ngSwitchCase="'carrinho'" [content]="content"></app-resume-shop> -->
+        </div>
 
-            <!-- <div [ngSwitch]="content?.component" [@flyInOutY]>
+        <!-- <div [ngSwitch]="content?.component" [@flyInOutY]>
                 <app-text-w-or-not-images *ngSwitchCase="'text'" [content]="content"></app-text-w-or-not-images>
                 <app-accordion *ngSwitchCase="'accordion'" [content]="content"></app-accordion>
                 <app-shop *ngSwitchCase="'shop'" [content]="content"></app-shop>
             </div> -->
-        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -40,13 +40,11 @@
       <h5>Por favor:</h5>
       <ul>
         <li>
-          <button
-            class="btn btn-outline-success mb-1 btn-sm"
-            (click)="onRefresh()"
-          >
+          <button class="btn btn-outline-success mb-1 btn-sm" (click)="onRefresh()">
             Clique aqui
           </button>
-          e/ou
+          para recarregar os conteúdos da página ou
+
           <button class="btn btn-outline-secondary mb-1 btn-sm">
             Pressione F5
           </button>

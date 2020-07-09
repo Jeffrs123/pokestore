@@ -61,7 +61,7 @@ export class PageContentsComponent implements OnInit {
         // console.log("Contents: ", v);
         if (v.length > 0) {
           console.log('v.length > 0 :', v.length);
-          console.log('tem conteúdo')
+          console.log('tem conteúdo');
           // this.pageContents$ = null
           // this.error$.next(true);
           // this.handleError();
@@ -76,7 +76,7 @@ export class PageContentsComponent implements OnInit {
       }),
       catchError(error => {
         console.error('Algum erro aconteceu: ', error);
-        console.log('HttpHeaderResponse: ', HttpHeaderResponse.toString())
+        console.log('HttpHeaderResponse: ', HttpHeaderResponse.toString());
         this.error$.next(true);
         this.handleError();
         return EMPTY;
