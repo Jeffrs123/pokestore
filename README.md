@@ -1,14 +1,18 @@
 ## FINALIZAR
 
-» No page-contents passar todos os items para o app-catalog;
+» No page-contents passar todos os items para o **`app-catalog`**;
   »» De acordo com a proposta de cada component, precisa ser passado ou item por item, ou todos os items, nesse caso, faz mais sentido passar todos os items, até mesmo para que consigamos filtrar, mapear por query params, paginar os items.
 
-» Reajustar o app-catalog;
-  »» Para exibir mais de um item lado-a-lado em telas grandes.
+» Component **`app-catalog`**
+  »» Reajustar o **`app-catalog`**;
+    »»» Para exibir mais de um item lado-a-lado em telas grandes.
+  »» Criar Serviço, para adicionar objeto pokemon (com id, nome, qtd e valor) para que seja pego no router "carrinho" no component **`app-resume-shop`**
 
-» Ajustar link, para exibição de maiores informações de cada produto, com router (poke/:id) e component próprio (pokedetail).
+» Ajustar link, para exibição de maiores informações de cada produto, com router (**`poke/:id`**) e component próprio (**`pokedetail`**).
 
-» Links do header e footer, precisam ser ajustados, e não usar diretamente no app-component;
+» Links do **`header`** e **`footer`**, precisam ser ajustados, e não usar diretamente no **`app-component`**;
+
+» 
 
 
 # Pokestore
