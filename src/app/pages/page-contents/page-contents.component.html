@@ -1,0 +1,82 @@
+<div class="container">
+  <div *ngIf="isCarrinho">
+    <app-resume-shop></app-resume-shop>
+  </div>
+  <div *ngIf="!isCarrinho">
+    <div *ngIf="pageContents$ | async as contents; else loadingError">
+      <!-- <pre> {{contents | json }}</pre> -->
+        <div *ngFor="let content of contents.results" [@flyInOutY]>
+          <div [ngSwitch]="path" [@flyInOutY]>
+            <app-catalog      *ngSwitchCase="'pokestore'" [content]="content"></app-catalog>
+            <!-- <app-resume-shop  *ngSwitchCase="'carrinho'"></app-resume-shop> -->
+            <!-- <app-resume-shop  *ngSwitchCase="'carrinho'" [content]="content"></app-resume-shop> -->
+          </div>
+
+            <!-- <div [ngSwitch]="content?.component" [@flyInOutY]>
+                <app-text-w-or-not-images *ngSwitchCase="'text'" [content]="content"></app-text-w-or-not-images>
+                <app-accordion *ngSwitchCase="'accordion'" [content]="content"></app-accordion>
+                <app-shop *ngSwitchCase="'shop'" [content]="content"></app-shop>
+            </div> -->
+        </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingError>
+  <div *ngIf="error$ | async; else loading">
+    <div class="container" style="padding-top: 50px; padding-bottom: 50px">
+      <h4 class="text-center">
+        Erro ao carregar <strong>{{ path | titlecase }} Page</strong>.
+      </h4>
+      <hr />
+      <h5>Motivos:</h5>
+      <ul>
+        <li>Pode não haver conteúdos a serem carregados</li>
+        <li>A página pode estar em manutenção.</li>
+        <li>O conteúdo pode ter sido excluído.</li>
+        <li>Pode ter ocorrido algum erro ao conectar com o servidor.</li>
+      </ul>
+      <hr />
+      <h5>Por favor:</h5>
+      <ul>
+        <li>
+          <button
+            class="btn btn-outline-success mb-1 btn-sm"
+            (click)="onRefresh()"
+          >
+            Clique aqui
+          </button>
+          e/ou
+          <button class="btn btn-outline-secondary mb-1 btn-sm">
+            Pressione F5
+          </button>
+          para recarregar a página.
+        </li>
+        Ou
+        <li>
+          Entre em contato com nosso suporte por:
+          <ul>
+            <li>telefone</li>
+            <li>email</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #loading>
+  <div class="container" style="padding-top: 50px; padding-bottom: 50px">
+    <div class="text-center" style="height:200px">
+      <p></p>
+      <div class="spinner-grow text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <p></p>
+      <p>
+        Carregando conteúdos da <strong>{{ path | titlecase }}</strong> Page
+        ...
+      </p>
+    </div>
+  </div>
+</ng-template>

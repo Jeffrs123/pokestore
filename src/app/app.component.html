@@ -5,14 +5,18 @@
     alt="Angular Logo"
     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
   /> -->
-  <img (click)="selection.value = 'component'" width="150" alt="Logo PokeStore"
-    src="./../assets/images/Logo-PokeStore.png" />
+  <img [routerLink]="['/']" width="150" alt="Logo PokeStore"    src="./../assets/images/Logo-PokeStore.png" />
+
+  <!-- <img (click)="selection.value = 'component'" width="150" alt="Logo PokeStore"    src="./../assets/images/Logo-PokeStore.png" /> -->
   <!-- <span>Welcome</span> -->
+  <!-- <div class="spacer"></div>
+  <input type="text" placeholder="Procurar"> -->
   <div class="spacer"></div>
-  <input type="text" placeholder="Procurar">
-  <div class="spacer"></div>
-  <a aria-label="cainho" rel="noopener" title="carrinho" (click)="selection.value = 'carrinho'">
-    
+
+  <a [routerLink]="['carrinho']" aria-label="cainho" rel="noopener" title="carrinho" >
+
+  <!-- <a aria-label="cainho" rel="noopener" title="carrinho" (click)="selection.value = 'carrinho'"> -->
+
     <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
       <rect width="400" height="400" fill="none" />
       <path
@@ -23,8 +27,9 @@
   </a>
 </div>
 
+<!--
 <div class="jcontent" role="main">
-  <!-- Terminal -->
+  <!-- Terminal -- >
   <div class="terminalOLD" [ngSwitch]="selection.value">
     <pre *ngSwitchDefault>
     LISTA DE POKEMON
@@ -40,7 +45,7 @@
 
     <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-    </svg> 
+    </svg>
   </a>
   <a class="jcard" target="_blank" rel="noopener" href="https://angular.io/tutorial">
 
@@ -51,7 +56,7 @@
 
     <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-    </svg> 
+    </svg>
   </a>
   <a class="jcard" target="_blank" rel="noopener" href="https://angular.io/tutorial">
 
@@ -62,7 +67,7 @@
 
     <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-    </svg> 
+    </svg>
   </a>
 
   <a class="jcard" target="_blank" rel="noopener" href="https://angular.io/cli">
@@ -150,11 +155,11 @@
   </a>
 </div>
   </pre>
-  
+
     <pre *ngSwitchCase="'carrinho'">
     CARRINHO DE COMPRA
     {{pokemonsComprados$}}
-    <!-- <div *ngFor="let pokes of pokemonsComprados$ "> -->
+    <!-- <div *ngFor="let pokes of pokemonsComprados$ "> -- >
     <div *ngIf="pokemonsComprados$ as pokes">
 
       <table>
@@ -176,7 +181,7 @@
 
         </tr>
         <tr>
-          <!-- <th>Name</th> -->
+          <!-- <th>Name</th> -- >
           <th colspan="4"><strong>Total</strong></th>
           <th >R$ {{valorTotal}}</th>
 
@@ -224,7 +229,7 @@
   <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
   <pre *ngSwitchCase="'dependency'">ng add _____</pre>
   <pre *ngSwitchCase="'test'">ng test</pre>
-  <pre *ngSwitchCase="'build'">ng build --prod</pre> -->
+  <pre *ngSwitchCase="'build'">ng build --prod</pre> -- >
   </div>
 
   <input type="hidden" #selection>
@@ -347,7 +352,7 @@
         </g>
       </svg>
     </a>
-  </div> -->
+  </div> -- >
 
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677"
     viewBox="0 0 2611.084 485.677">
@@ -356,5 +361,8 @@
       transform="translate(142.69 -634.312)" fill="#eee" />
   </svg>
 </div>
+
+-->
+<router-outlet></router-outlet>
 <app-footer></app-footer>
 <!-- <router-outlet></router-outlet> -->
